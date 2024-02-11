@@ -6,3 +6,6 @@ files
 test_gui.py
 add.png
 complete.png
+gui.spec
+build
+dist
