@@ -40,7 +40,7 @@ while True:
         case "Edit":
             try:
                 todo_to_edit = values['todos'][0]
-                new_todo = values['todo'] + "\n"
+                new_todo = values['todo'].strip() + "\n"
 
                 todos = functions.get_todos()
                 index = todos.index(todo_to_edit)
@@ -65,8 +65,11 @@ while True:
             break
 
         case "todos":
-            window['todo'].update(value=values['todos'][0])
-            
+            try:
+                window['todo'].update(value=values['todos'][0])
+            except IndexError:
+                pass
+          
         case sg.WIN_CLOSED:
             break
         
